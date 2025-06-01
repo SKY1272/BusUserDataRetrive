@@ -20,6 +20,6 @@ app.use('/user',userRoutes);
 app.use('/bus',busRoutes)
 
 
-app.listen(3000,()=>{
+app.listen(4000,()=>{
 console.log("server is running port on 3000");
 })
