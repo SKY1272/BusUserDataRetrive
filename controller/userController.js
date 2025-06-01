@@ -10,7 +10,7 @@ const createUser=(req,res)=>{
           console.log("Insert error:",err);
           res.status(500).json({err:"database error"});
          }
-         res.status(200).Json(result)
+          res.status(200).json({ message: "User added", userId: result.insertId });
    })
 }
 const getAllUsers=(req,res)=>{

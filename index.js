@@ -8,18 +8,21 @@ const busRoutes=require('./routes/busRouter')
 
 
 
-app.get('/',(req,res)=>{
-  res.send("Hello from BusUser");
-})
-
-
 app.use(express.json());
+
+// Request logger middleware BEFORE routes
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
 
 
 app.use('/user',userRoutes);
 app.use('/bus',busRoutes)
 
 
-app.listen(4000,()=>{
+app.listen(3000,()=>{
+
 console.log("server is running port on 3000");
 })
